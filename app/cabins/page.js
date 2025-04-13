@@ -1,9 +1,11 @@
 import React from 'react'
+import Navigation from '../components/Navigation'
 
 export default function Page() {
     return (
-        <h1>
-            Cabins Page
-        </h1>
+        <div>
+            <Navigation />
+            <h1>Cabins Page</h1>
+        </div>
     )
 }

@@ -1,7 +1,11 @@
+import Link from "next/link";
+import Navigation from "./components/Navigation";
+
 export default function Page() {
   return (
-    <h1>
-      hello next
-    </h1>
+    <div>
+      <h1>The Wild Oasis. Welcome to paradise.</h1>
+      <Navigation />
+    </div>
   )
 }
