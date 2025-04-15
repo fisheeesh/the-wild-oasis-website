@@ -4,7 +4,14 @@ import Navigation from '@/app/_components/Navigation'
 import Logo from '@/app/_components/Logo'
 
 export const metadata = {
-  title: 'The Wild Oasis',
+  // title: 'The Wild Oasis',
+  title: {
+    template: "%s | The Wild Oasis",
+    default: 'Welcome | The Wild Oasis'
+  },
+  //? for SEO, page description like a meta tag in the head
+  description: "Luxurious Cabins Hotel, located in the heart of the Thailand Chiang Rai, surrounded by beautiful mountains and dark forests.",
+  
 }
 
 export default function RootLayout({ children }) {
