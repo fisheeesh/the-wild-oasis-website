@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import image1 from '@/public/about-1.jpg'
 
+export const metadata = {
+    title: 'About'
+}
+
 export default function Page() {
     return (
         <div className="grid grid-cols-5 gap-x-24 gap-y-32 text-lg items-center">
