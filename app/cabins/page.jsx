@@ -22,8 +22,8 @@ export default function Page() {
                 to paradise.
             </p>
 
-            //$ Suspense needs to be outside of the component that does async work
-            //? If all a component / page does is data loading, then it doesn't need to be wrapped in Suspense
+            {/* Suspense needs to be outside of the component that does async work */}
+            {/* If all a component / page does is data loading, then it doesn't need to be wrapped in Suspense */}
             <Suspense fallback={<Spinner />}>
                 <CabinList />
             </Suspense>
