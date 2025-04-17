@@ -1,15 +1,12 @@
-import CabinCard from "@/app/_components/CabinCard";
-import { getCabins } from "../_lib/data-service";
+import { Suspense } from "react";
+import CabinList from "../_components/CabinList";
+import Spinner from "../_components/Spinner";
 
 export const metadata = {
     title: 'Cabins'
 }
 
-export default async function Page() {
-    // CHANGE
-    console.log('starting...')
-    const cabins = await getCabins();
-    console.log(cabins)
+export default function Page() {
 
     return (
         <div>
@@ -25,13 +22,11 @@ export default async function Page() {
                 to paradise.
             </p>
 
-            {cabins.length > 0 && (
-                <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 xl:gap-14">
-                    {cabins.map((cabin) => (
-                        <CabinCard cabin={cabin} key={cabin.id} />
-                    ))}
-                </div>
-            )}
+            //$ Suspense needs to be outside of the component that does async work
+            //? If all a component / page does is data loading, then it doesn't need to be wrapped in Suspense
+            <Suspense fallback={<Spinner />}>
+                <CabinList />
+            </Suspense>
         </div>
     );
 }
