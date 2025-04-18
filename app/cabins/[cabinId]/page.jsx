@@ -2,6 +2,7 @@ import { getCabin, getCabins } from "@/app/_lib/data-service";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
+
 export async function generateMetadata({ params }) {
     const { name } = await getCabin(params.cabinId)
 
@@ -9,7 +10,7 @@ export async function generateMetadata({ params }) {
 }
 
 /**
- * ? For a dynamic segment of a URL, it's always a good idea to tell Next.js about those by using degenerate static params function.
+ * ? For a dynamic segment of a URL, it's always a good idea to tell Next.js about those by using generate static params function.
  * ? Because, this way, this route can then be entirely statically generated, which is a lot better for performance.
  */
 export const generateStaticParams = async () => {
