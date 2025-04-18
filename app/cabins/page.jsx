@@ -2,7 +2,10 @@ import { Suspense } from "react";
 import CabinList from "../_components/CabinList";
 import Spinner from "../_components/Spinner";
 
-//? make /cabins dynamic page
+//? make /cabins dynamic page / SSR
+// export const revalidate = 0
+//? ISR
+//? With this it is like PPR
 export const revalidate = 3600
 
 export const metadata = {

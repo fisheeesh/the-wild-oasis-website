@@ -7,6 +7,7 @@ import CabinCard from "./CabinCard";
  */
 export default async function CabinList() {
     //? By doing this, this component will be opt out of the data cache.
+    //? It is like revalidate = 0
     // noStore()
 
     const cabins = await getCabins()
