@@ -9,7 +9,7 @@ export default function Filter() {
 
     const activeFilter = searchParams.get('capacity') ?? 'all'
 
-    const handleFilter = filter => {
+    const handleFilter = (filter) => {
         const params = new URLSearchParams(searchParams)
         params.set('capacity', filter)
         router.replace(`${pathname}?${params.toString()}`, { scroll: false })
