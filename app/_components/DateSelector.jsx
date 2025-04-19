@@ -22,20 +22,28 @@ function DateSelector({ settings, bookDates, cabin }) {
   const range = { from: null, to: null };
 
   // SETTINGS
-  const {minBookingLength, maxBookingLength} = settings;
+  const { minBookingLength, maxBookingLength } = settings;
 
   return (
     <div className="flex flex-col justify-between">
       <DayPicker
-        className="pt-12 place-self-center"
+        className="place-self-center pt-12"
+        styles={{
+          months: { width: "30rem" },
+          day: { width: "32px", height: "32px" },
+          day_button: { width: "30px", height: "30px" },
+        }}
         mode="range"
         min={minBookingLength + 1}
         max={maxBookingLength}
-        fromMonth={new Date()}
-        fromDate={new Date()}
-        toYear={new Date().getFullYear() + 5}
+        // fromMonth={new Date()}
+        // fromDate={new Date()}
+        // toYear={new Date().getFullYear() + 5}
+        startMonth={new Date()}
+        endMonth={new Date(new Date().getFullYear(), 5 * 12)}
         captionLayout="dropdown"
         numberOfMonths={2}
+        disabled={{ before: new Date() }}
       />
 
       <div className="flex items-center justify-between px-8 bg-accent-500 text-primary-800 h-[72px]">
