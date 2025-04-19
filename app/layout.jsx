@@ -15,7 +15,7 @@ export const metadata = {
     default: 'Welcome | The Wild Oasis'
   },
   //? for SEO, page description like a meta tag in the head
-  description: "Luxurious Cabins Hotel, located in the heart of the Thailand Chiang Rai, surrounded by beautiful mountains and dark forests.",
+  description: "Luxurious Cabins Hotel, located in the heart of Italian Dolomites, surrounded by beautiful mountains and dark forests.",
 
 }
 
