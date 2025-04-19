@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import CabinList from "../_components/CabinList";
 import Spinner from "../_components/Spinner";
 import Filter from "../_components/Filter";
+import ReservationReminder from "../_components/ReservationReminder";
 
 //? make /cabins dynamic page / SSR
 // export const revalidate = 0
@@ -46,6 +47,7 @@ export default function Page({ searchParams }) {
             {/* Server components re-render whenever there is navigation. */}
             <Suspense fallback={<Spinner />} key={filter}>
                 <CabinList filter={filter} />
+                <ReservationReminder />
             </Suspense>
         </div>
     );
