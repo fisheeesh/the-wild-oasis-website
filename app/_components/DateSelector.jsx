@@ -31,7 +31,7 @@ function DateSelector({ settings, bookDates, cabin }) {
   return (
     <div className="flex flex-col justify-between">
       {/* Latest version */}
-      {/* <DayPicker
+      <DayPicker
         className="place-self-center pt-12"
         styles={{
           months: { width: "30rem" },
@@ -39,7 +39,7 @@ function DateSelector({ settings, bookDates, cabin }) {
           day_button: { width: "30px", height: "30px" },
         }}
         mode="range"
-        onSelect={(range) => { setRange(range) }}
+        onSelect={(range) => setRange(range || { from: null, to: null })}
         selected={range}
         min={minBookingLength + 1}
         max={maxBookingLength}
@@ -48,10 +48,10 @@ function DateSelector({ settings, bookDates, cabin }) {
         captionLayout="dropdown"
         numberOfMonths={2}
         disabled={{ before: new Date() }}
-      /> */}
+      />
 
       {/* version: 8 */}
-      <DayPicker
+      {/* <DayPicker
         className="place-self-center pt-12 rdp"
         mode="range"
         onSelect={(range) => setRange(range || { from: null, to: null })}
@@ -64,7 +64,7 @@ function DateSelector({ settings, bookDates, cabin }) {
         captionLayout="dropdown"
         numberOfMonths={2}
         disabled={{ before: new Date() }}
-      />
+      /> */}
 
       <div className="flex items-center justify-between px-8 bg-accent-500 text-primary-800 h-[72px]">
         <div className="flex items-baseline gap-6">
