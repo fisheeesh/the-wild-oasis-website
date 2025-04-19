@@ -13,7 +13,7 @@ export async function getCabin(id) {
     .single();
 
   //? For testing
-  //? await new Promise((res) => setTimeout(res, 1000));
+  // await new Promise((res) => setTimeout(res, 5000));
 
   if (error) {
     notFound()
@@ -107,6 +107,8 @@ export async function getBookedDatesByCabinId(cabinId) {
     .eq('cabinId', cabinId)
     .or(`startDate.gte.${today},status.eq.checked-in`);
 
+  // await new Promise((res) => setTimeout(res, 5000));
+
   if (error) {
     console.error(error);
     throw new Error('Bookings could not get loaded');
@@ -132,6 +134,8 @@ export async function getSettings() {
     console.error(error);
     throw new Error('Settings could not be loaded');
   }
+
+  // await new Promise((res) => setTimeout(res, 5000));
 
   return data;
 }
