@@ -39,8 +39,7 @@ function SideNavigation() {
           <li key={link.name}>
             <Link
               className={isActive(link.href)}
-              href={link.href}
-            >
+              href={link.href}>
               {link.icon}
               <span>{link.name}</span>
             </Link>
