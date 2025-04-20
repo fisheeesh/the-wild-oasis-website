@@ -1,6 +1,5 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
-import { getServerSession } from 'next-auth'
 
 export const authConfig = {
     providers: [
@@ -9,10 +8,15 @@ export const authConfig = {
             clientSecret: process.env.AUTH_GOOGLE_SECRET,
         }),
     ],
-    secret: process.env.NEXTAUTH_SECRET,
+    callbacks: {
+        /**
+         * ? Check whether, user is authorized or not.
+         * ? This callback will be called whenever a user tries to access a protected route which we handle in middleware.js
+         */
+        authorized({ auth, request }) {
+            return !!auth?.user
+        }
+    }
 }
 
-const handler = NextAuth(authConfig)
-export { handler as GET, handler as POST }
-
-export const auth = () => getServerSession(authConfig)
+export const { auth, handlers: { GET, POST } } = NextAuth(authConfig)
