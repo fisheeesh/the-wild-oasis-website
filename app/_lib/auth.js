@@ -27,7 +27,7 @@ export const authConfig = {
         },
         /**
          * ? Since we need guestId to manipulate the bookings and reservations, it is a good idea to have one central place to get it.
-         * ? This process runs after the sign in process.
+         * $ This process runs after the sign in process. So dun forget to add await for getGuest in singIn callback process.
          * ? We can use the session callback to add custom properties to the session object.
          * ? This is the perfect place to add the guestId to the session object.
          */
