@@ -1,32 +1,13 @@
-"use client"
+import { auth } from "../_lib/auth";
+import NavLinks from "./NavLinks";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-export default function Navigation() {
-    const pathname = usePathname()
-
-    const isActive = (href) => `hover:text-accent-400 transition-colors ${href === pathname ? 'text-accent-400' : ''}`
+export default async function Navigation() {
+    const session = await auth()
+    console.log(session)
 
     return (
         <nav className="z-10 text-xl">
-            <ul className="flex gap-16 items-center">
-                <li>
-                    <Link href="/cabins" className={isActive('/cabins')}>
-                        Cabins
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/about" className={isActive('/about')}>
-                        About
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/account" className={isActive('/account')}>
-                        Guest area
-                    </Link>
-                </li>
-            </ul>
+            <NavLinks user={session?.user} />
         </nav>
     );
 }

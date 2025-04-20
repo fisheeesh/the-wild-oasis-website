@@ -8,6 +8,7 @@ import ReservationReminder from "../_components/ReservationReminder";
 // export const revalidate = 0
 //? ISR
 //? With this it is like PPR
+// $ x
 export const revalidate = 3600
 
 export const metadata = {
