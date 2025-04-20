@@ -6,19 +6,6 @@ import { supabase } from "./supabase"
 
 //$ server actions can even be called from client components and will also be executed on the server.
 
-export const signInAction = async () => {
-    //? After user successfully sign in, redirect to account page.
-    await signIn('google', {
-        redirectTo: '/account'
-    })
-}
-
-export const signOutAction = async () => {
-    await signOut({
-        redirectTo: '/'
-    })
-}
-
 //? In order to work formData, each of the input need name attribute.
 //$ It is a common practise not to use try/catch in server actions. Just simply throw the error in the func body and they will be cath by the closet boudary.
 export const updateGuestAction = async (formData) => {
@@ -42,5 +29,18 @@ export const updateGuestAction = async (formData) => {
 
     //? revalidate cache data after successfuly updated
     revalidatePath("/account/profile")
+}
+
+export const signInAction = async () => {
+    //? After user successfully sign in, redirect to account page.
+    await signIn('google', {
+        redirectTo: '/account'
+    })
+}
+
+export const signOutAction = async () => {
+    await signOut({
+        redirectTo: '/'
+    })
 }
 
