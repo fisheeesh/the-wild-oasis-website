@@ -142,11 +142,16 @@ export async function getSettings() {
 
 export async function getCountries() {
   try {
+    //? API Down :()
+    // const res = await fetch(
+    //   'https://restcountries.com/v2/all?fields=name,flag'
+    // );
     const res = await fetch(
-      'https://restcountries.com/v2/all?fields=name,flag'
+      'https://countriesnow.space/api/v0.1/countries/flag/images'
     );
+
     const countries = await res.json();
-    return countries;
+    return countries.data;
   } catch {
     throw new Error('Could not fetch countries');
   }
