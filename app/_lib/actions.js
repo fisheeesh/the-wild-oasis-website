@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache"
 import { auth, signIn, signOut } from "./auth"
 import { supabase } from "./supabase"
+import { getBookings } from "./data-service"
 
 /**
  * $ server actions can even be called from client components and will also be executed on the server.
@@ -49,6 +50,12 @@ export const updateGuestAction = async (formData) => {
 export const deleteReservationAction = async (bookingId) => {
     const session = await auth()
     if (!session) throw new Error('You must be logged in.')
+
+    //# Check if the bookingId belongs to the logged in user
+    const bookings = await getBookings(session.user.guestId)
+    const guestBookingIds = bookings.map(booking => booking.id)
+
+    if (!guestBookingIds.includes(bookingId)) throw new Error('You are not allowed to delete this booking.')
 
     const { error } = await supabase.from('bookings').delete().eq('id', bookingId);
 
