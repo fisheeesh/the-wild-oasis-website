@@ -5,7 +5,7 @@ import { updateReservationAction } from '../_lib/actions'
 import SpinnerMini from './SpinnerMini'
 
 export default function UpdateReservationForm({ booking, cabin }) {
-    const { id, observations, numGuest } = booking
+    const { id, observations, numGuest, startDate } = booking
     const { maxCapacity } = cabin
 
     return (
@@ -48,6 +48,7 @@ export default function UpdateReservationForm({ booking, cabin }) {
             <div className="flex justify-end items-center gap-6">
                 <UpdateButton />
                 <input type="hidden" name="bookingId" value={id} />
+                <input type="hidden" name="startDate" value={startDate} />
             </div>
         </form>
     )

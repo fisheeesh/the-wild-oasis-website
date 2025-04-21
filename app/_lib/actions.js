@@ -5,6 +5,7 @@ import { auth, signIn, signOut } from "./auth"
 import { supabase } from "./supabase"
 import { getBookings } from "./data-service"
 import { redirect } from "next/navigation"
+import { isPast } from "date-fns"
 
 /**
  * $ server actions can even be called from client components and will also be executed on the server.
@@ -74,11 +75,13 @@ export const updateReservationAction = async (formData) => {
     const numGuest = formData.get('numGuest')
     const observations = formData.get('observations')
     const bookingId = formData.get('bookingId')
+    const startDate = formData.get('startDate')
 
     const bookings = await getBookings(session.user.guestId)
     const guestBookingIds = bookings.map(booking => booking.id)
 
-    if (!guestBookingIds.includes(bookingId)) throw new Error('You are not allowed to update this booking.')
+    if (!guestBookingIds.includes(Number(bookingId))) throw new Error('You are not allowed to update this booking.')
+    if (isPast(new Date(startDate))) throw new Error("Updating past reservations is not allowed.");
 
     const updatedData = { numGuest, observations }
 
@@ -86,8 +89,6 @@ export const updateReservationAction = async (formData) => {
         .from('bookings')
         .update(updatedData)
         .eq('id', bookingId)
-        .select()
-        .single();
 
     if (error) {
         throw new Error('Booking could not be updated');
