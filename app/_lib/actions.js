@@ -20,14 +20,14 @@ export const updateGuestAction = async (formData) => {
 
     const updatedData = { nationality, nationalID, countryFlag }
 
-    const { data, error } = await supabase
+    const { error } = await supabase
         .from('guest')
         .update(updatedData)
         .eq('id', session.user.guestId)
 
     if (error) throw new Error('Guest could not be updated');
 
-    //? revalidate cache data after successfuly updated
+    //# revalidate cache data after successfuly updated
     revalidatePath("/account/profile")
 }
 
