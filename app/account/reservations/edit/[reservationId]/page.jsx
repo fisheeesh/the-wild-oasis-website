@@ -2,7 +2,7 @@ import UpdateReservationForm from "@/app/_components/UpdateReservationForm";
 import { getBooking, getCabin } from "@/app/_lib/data-service";
 
 export default async function Page({ params }) {
-    const reservationId = params.reservationId
+    const { reservationId } = await params
 
     const booking = await getBooking(reservationId)
 

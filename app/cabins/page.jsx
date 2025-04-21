@@ -15,14 +15,15 @@ export const metadata = {
     title: 'Cabins'
 }
 
-export default function Page({ searchParams }) {
+export default async function Page({ searchParams }) {
+    const { capacity} = await searchParams
     /**
      * ? searchParams can not be known at runtime.
      * ? What this means is that whenever we make use of the searchParams, the page can no longer be statically rendered.
      * ? So right now, this cabins page will now always be dynamically rendered.
      * ? So this revalidate, this now no longer takes any effect because this only applies to statically generated pages,
      */
-    const filter = searchParams?.capacity ?? 'all'
+    const filter = capacity ?? 'all'
 
     return (
         <div>

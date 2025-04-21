@@ -5,7 +5,8 @@ import { getCabin, getCabins } from "@/app/_lib/data-service";
 import { Suspense } from "react";
 
 export async function generateMetadata({ params }) {
-    const { name } = await getCabin(params.cabinId)
+    const { cabinId } = await params
+    const { name } = await getCabin(cabinId)
 
     return { title: `Cabin ${name}` }
 }
@@ -23,6 +24,7 @@ export const generateStaticParams = async () => {
 }
 
 export default async function Page({ params }) {
+    const { cabinId } = await params
     /**
      * ! Here is a blocking waterfall.
      * ? It's like we're fetching multiple pieces of data that don't really depend on each other.
@@ -31,7 +33,7 @@ export default async function Page({ params }) {
      * $ Now, one approach to fixing this is to use Promise.all. 
      * ? And so then we can basically get this data in parallel which is a bit faster.
      */
-    const cabin = await getCabin(params.cabinId)
+    const cabin = await getCabin(cabinId)
     // const settings = await getSettings()
     // const bookDates = await getBookedDatesByCabinId(params.cabinId)
 
