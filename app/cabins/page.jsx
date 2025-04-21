@@ -16,7 +16,7 @@ export const metadata = {
 }
 
 export default async function Page({ searchParams }) {
-    const { capacity} = await searchParams
+    const { capacity } = await searchParams
     /**
      * ? searchParams can not be known at runtime.
      * ? What this means is that whenever we make use of the searchParams, the page can no longer be statically rendered.

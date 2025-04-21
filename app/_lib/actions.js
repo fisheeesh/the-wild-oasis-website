@@ -1,11 +1,11 @@
 "use server"
 
-import { revalidatePath } from "next/cache"
-import { auth, signIn, signOut } from "./auth"
-import { supabase } from "./supabase"
-import { getBookings } from "./data-service"
-import { redirect } from "next/navigation"
 import { isPast } from "date-fns"
+import { revalidatePath } from "next/cache"
+import { redirect } from "next/navigation"
+import { auth, signIn, signOut } from "./auth"
+import { getBookings } from "./data-service"
+import { supabase } from "./supabase"
 
 /**
  * $ server actions can even be called from client components and will also be executed on the server.
@@ -73,14 +73,15 @@ export const updateReservationAction = async (formData) => {
     if (!session) throw new Error('You must be logged in.')
 
     const numGuest = formData.get('numGuest')
-    const observations = formData.get('observations')
-    const bookingId = formData.get('bookingId')
+    const observations = formData.get('observations').slice(0, 1000)
+    //# formData stores everyting as string
+    const bookingId = Number(formData.get('bookingId'))
     const startDate = formData.get('startDate')
 
     const bookings = await getBookings(session.user.guestId)
     const guestBookingIds = bookings.map(booking => booking.id)
 
-    if (!guestBookingIds.includes(Number(bookingId))) throw new Error('You are not allowed to update this booking.')
+    if (!guestBookingIds.includes(bookingId)) throw new Error('You are not allowed to update this booking.')
     if (isPast(new Date(startDate))) throw new Error("Updating past reservations is not allowed.");
 
     const updatedData = { numGuest, observations }
@@ -94,8 +95,7 @@ export const updateReservationAction = async (formData) => {
         throw new Error('Booking could not be updated');
     }
 
-    //? 
-    redirect('/account/reservations')
+    redirect('/account/reservations?updated=true')
 }
 
 // curl 'http://localhost:3000/account/reservations' \

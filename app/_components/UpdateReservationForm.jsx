@@ -1,8 +1,7 @@
 "use client"
 
-import { useFormStatus } from 'react-dom'
 import { updateReservationAction } from '../_lib/actions'
-import SpinnerMini from './SpinnerMini'
+import SubmitButton from './SubmitButton'
 
 export default function UpdateReservationForm({ booking, cabin }) {
     const { id, observations, numGuest, startDate } = booking
@@ -37,7 +36,6 @@ export default function UpdateReservationForm({ booking, cabin }) {
                 <textarea
                     id='observations'
                     placeholder="Please let us know if you have any special requests or needs."
-                    maxLength={200}
                     rows={5}
                     defaultValue={observations}
                     name="observations"
@@ -46,26 +44,12 @@ export default function UpdateReservationForm({ booking, cabin }) {
             </div>
 
             <div className="flex justify-end items-center gap-6">
-                <UpdateButton />
+                <SubmitButton pendingLabel="Updating...">
+                    Update reservation
+                </SubmitButton>
                 <input type="hidden" name="bookingId" value={id} />
                 <input type="hidden" name="startDate" value={startDate} />
             </div>
         </form>
-    )
-}
-
-function UpdateButton() {
-    const { pending } = useFormStatus()
-
-    return (
-        <button disabled={pending} className="bg-accent-500 px-8 py-4 text-primary-800 font-semibold hover:bg-accent-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300">
-            {
-                pending ?
-                    <div className="flex items-center gap-2">
-                        <SpinnerMini /> Updating...
-                    </div> :
-                    'Update reservation'
-            }
-        </button>
     )
 }
