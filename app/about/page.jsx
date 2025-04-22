@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import image1 from '@/public/about-1.jpg'
+import image2 from '@/public/about-2.jpg'
 import { getCabins } from "../_lib/data-service";
 
 export const revalidate = 86400
@@ -51,7 +52,12 @@ export default async function Page() {
             </div>
 
             <div className="col-span-2 aspect-square relative">
-                <Image src='/about-2.jpg' fill className="object-cover" alt="Family that manages The Wild Oasis" />
+                {/* <Image src='/about-2.jpg' fill className="object-cover" alt="Family that manages The Wild Oasis" /> */}
+                <Image
+                    src={image2}
+                    placeholder="blur"
+                    quality={80}
+                    alt="Family that manages The Wild Oasis" />
             </div>
 
             <div className="col-span-3">
