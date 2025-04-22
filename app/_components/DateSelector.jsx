@@ -41,7 +41,7 @@ function DateSelector({ settings, bookDates, cabin }) {
         mode="range"
         onSelect={(range) => setRange(range || { from: null, to: null })}
         selected={displayedRange}
-        min={minBookingLength + 1}
+        min={minBookingLength}
         max={maxBookingLength}
         startMonth={new Date()}
         endMonth={new Date(new Date().getFullYear(), 5 * 12)}

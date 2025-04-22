@@ -1,5 +1,6 @@
 "use client"
 
+import toast from 'react-hot-toast'
 import { updateReservationAction } from '../_lib/actions'
 import SubmitButton from './SubmitButton'
 
@@ -8,7 +9,10 @@ export default function UpdateReservationForm({ booking, cabin }) {
     const { maxCapacity } = cabin
 
     return (
-        <form action={updateReservationAction} className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
+        <form action={async (formData) => {
+            await updateReservationAction(formData)
+            toast.success('Your reservation has been updated successfully!')
+        }} className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
             <div className="space-y-2">
                 <label htmlFor="numGuest">How many guests?</label>
                 <select

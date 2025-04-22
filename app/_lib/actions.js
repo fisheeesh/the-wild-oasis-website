@@ -98,7 +98,7 @@ export const updateReservationAction = async (formData) => {
         throw new Error('Booking could not be updated');
     }
 
-    redirect('/account/reservations?updated=true')
+    redirect('/account/reservations')
 }
 
 export const createReservationAction = async (bookingData, formData) => {
@@ -124,4 +124,7 @@ export const createReservationAction = async (bookingData, formData) => {
     if (error) {
         throw new Error('Booking could not be created');
     }
+
+    revalidatePath(`/cabins/${bookingData.cabinId}`)
+    redirect('/cabins/thankyou')
 }
