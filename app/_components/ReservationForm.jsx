@@ -1,6 +1,36 @@
+"use client"
+
+import { differenceInDays } from "date-fns";
+import { useReservation } from "./ReservationContext";
+import { createReservationAction } from "../_lib/actions";
+
 function ReservationForm({ user, cabin }) {
-  // CHANGE
-  const { maxCapacity } = cabin;
+  const { range } = useReservation()
+  const { maxCapacity, regularPrice, discount, id } = cabin;
+
+  const startDate = range.from;
+  const endDate = range.to;
+
+  const numNights = Number(differenceInDays(endDate, startDate));
+
+  const cabinPrice = numNights * (regularPrice - discount)
+
+  const bookingData = {
+    startDate,
+    endDate,
+    cabinPrice,
+    numNights,
+    cabinId: id
+  }
+
+  /**
+   * ? In order to pass additional data to the action, we need to bind the action with the data. 
+   * ? First argument is to basically set the disc keyword of that function. (the new value of dist keyword but we are not interested at all so set null)
+   * ? And plus, it allows us to pass some additional arguments into the function.
+   * $ The passed data (second argument) will be the first argument of the action function.
+   * $ So we must receive that data in the action function as first argument then formData.
+   */
+  const createReservationWithData = createReservationAction.bind(null, bookingData)
 
   return (
     <div className='scale-[1.005]'>
@@ -19,13 +49,13 @@ function ReservationForm({ user, cabin }) {
         </div>
       </div>
 
-      <form className='bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col'>
+      <form action={createReservationWithData} className='bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col'>
         <div className='space-y-2'>
-          <label htmlFor='numGuests'>How many guests?</label>
+          <label htmlFor='numGuest'>How many guests?</label>
           <select
-            name='numGuests'
-            id='numGuests'
-            className='px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm'
+            name='numGuest'
+            id='numGuest'
+            className='px-5 py-2.5 border border-primary-200 focus:outline-0 focus:border-accent-500 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm'
             required
           >
             <option value='' key=''>
@@ -46,7 +76,7 @@ function ReservationForm({ user, cabin }) {
           <textarea
             name='observations'
             id='observations'
-            className='px-5 resize-none py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm'
+            className='px-5 resize-none py-2.5 border border-primary-200 focus:outline-0 focus:border-accent-500 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm'
             placeholder='Any pets, allergies, special requirements, etc.?'
           />
         </div>

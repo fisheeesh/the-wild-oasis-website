@@ -97,10 +97,15 @@
   --rdp-accent-background-color: var(--color-accent-600) !important;
   margin: 0 !important;
 
+  .rdp-nav {
+    display: none;
+  }
+
   .rdp-dropdown {
     color: var(--color-slate-500) !important;
   }
   .rdp-dropdown option:disabled {
     color: var(--color-slate-300) !important;
   }
+  
 }
