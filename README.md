@@ -11,19 +11,19 @@ Authentication is secured with **Google Sign-In** via **NextAuth.js**. Logged-in
 ---
 ## 📑 Table of Contents
 
-- [✨ Features](#-features)
-- [🗺️ Pages & Routes](#-pages--routes)
-- [🛠️ Tech Stack](#-tech-stack)
-- [🔒 Security](#-security)
-- [💳 Payment Policy](#-payment-policy)
-- [🎉 User Flow](#-user-flow)
-- [🚀 Getting Started](#-getting-started)
+- [✨ Features](#features)
+- [🗺️ Pages](#pages)
+- [🛠️ Tech Stack](#tech-stack)
+- [🔒 Security](#security)
+- [💳 Payment Policy](#payment-policy)
+- [🎉 User Flow](#user-flow)
+- [🚀 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [🌐 Live Demo](#live-demo)
-- [📎 License](#-license)
+- [📎 License](#license)
 
-## ✨ Features
+## Features
 
 - 🏕️ Browse all available cabins with prices and discounts.
 - 📅 Book a specific cabin by selecting:
@@ -39,7 +39,8 @@ Authentication is secured with **Google Sign-In** via **NextAuth.js**. Logged-in
 
 ---
 
-## 🗺️ Pages & Routes
+
+## Pages
 
 - `/` – Landing page (main entry).
 - `/login` – Login page (Google Sign-In).
@@ -55,7 +56,7 @@ Authentication is secured with **Google Sign-In** via **NextAuth.js**. Logged-in
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Next.js (App Router)** – SSR / ISR / SSG.
 - **Supabase** – Backend and database.
@@ -69,7 +70,7 @@ Authentication is secured with **Google Sign-In** via **NextAuth.js**. Logged-in
 
 ---
 
-## 🔒 Security
+## Security
 
 - Guests can only manage **their own reservations**.
 - Past bookings **cannot** be edited or deleted.
@@ -79,14 +80,14 @@ Authentication is secured with **Google Sign-In** via **NextAuth.js**. Logged-in
 
 ---
 
-## 💳 Payment Policy
+## Payment Policy
 
 - **No online payment.**
 - Payment is made **on arrival at the hotel**.
 
 ---
 
-## 🎉 User Flow
+## User Flow
 
 1. Visit the landing page.
 2. Sign in using Google.
@@ -98,7 +99,7 @@ Authentication is secured with **Google Sign-In** via **NextAuth.js**. Logged-in
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Supabase project (with tables and RLS policies configured)
@@ -120,7 +121,7 @@ npm run dev
 ## Live Demo
 Check out the live version of The Wild Oasis Website: https://the-wild-oasis-website-eta-flame.vercel.app
 
-## 📎 License
+## License
 
 This project is for learning purposes. This project is licensed under the [MIT License](LICENSE).
 
