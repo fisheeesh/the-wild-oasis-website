@@ -2,8 +2,6 @@
 
 import { FlagIcon } from "@heroicons/react/24/solid"
 import { updateGuestAction } from "../_lib/actions"
-import { useFormStatus } from "react-dom"
-import SpinnerMini from "./SpinnerMini"
 import SubmitButton from "./SubmitButton"
 
 export default function UpdateProfile({ guest, children }) {
@@ -52,8 +50,9 @@ export default function UpdateProfile({ guest, children }) {
                 <input
                     placeholder="National ID (6-12 alphanumeric characters)"
                     defaultValue={nationalID}
+                    autoComplete="off"
                     name="nationalID"
-                    className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+                    className="px-5 py-2.5 focus:outline-0 border border-primary-200 focus:border-accent-500 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
                 />
             </div>
 

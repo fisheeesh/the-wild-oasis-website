@@ -8,6 +8,8 @@ import {
 import SignOutButton from './SignOutButton';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Modal from './Modal';
+import ConfirmLogout from './ConfirmLogout';
 
 const navLinks = [
   {
@@ -47,7 +49,17 @@ function SideNavigation() {
         ))}
 
         <li className='mt-auto'>
-          <SignOutButton />
+          <Modal>
+            <Modal.Opens open={'sign-out'}>
+              <div>
+                <SignOutButton />
+              </div>
+            </Modal.Opens>
+
+            <Modal.Window name={'sign-out'}>
+              <ConfirmLogout />
+            </Modal.Window>
+          </Modal>
         </li>
       </ul>
     </nav>

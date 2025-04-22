@@ -43,8 +43,8 @@ export default function RootLayout({ children }) {
                   fontSize: '16px',
                   maxWidth: '500px',
                   padding: '16px 24px',
-                  backgroundColor: '#fff',
-                  color: '#000',
+                  backgroundColor: '#1B2631',
+                  color: '#D4DEE7',
                 }
               }} />
             </ReservationProvider>

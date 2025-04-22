@@ -3,6 +3,7 @@
 import { useOptimistic } from 'react'
 import ReservationCard from './ReservationCard'
 import { deleteReservationAction } from '../_lib/actions'
+import toast from 'react-hot-toast'
 
 export default function ReservationList({ bookings }) {
     /**
