@@ -18,7 +18,7 @@ function DeleteReservation({ bookingId, onDelete }) {
   return (
     <Modal>
       <Modal.Opens open={'delete'}>
-        <button disabled={isPending} className='group flex items-center gap-2 uppercase disabled:cursor-not-allowed text-xs font-bold text-primary-300 flex-grow px-3 hover:bg-accent-600 transition-colors hover:text-primary-900'>
+        <button disabled={isPending} className='group cursor-pointer flex items-center gap-2 uppercase disabled:cursor-not-allowed text-xs font-bold text-primary-300 flex-grow px-3 hover:bg-accent-600 transition-colors hover:text-primary-900'>
           {
             !isPending ?
               <>

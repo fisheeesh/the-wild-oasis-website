@@ -4,6 +4,7 @@ import { differenceInDays } from "date-fns";
 import { useReservation } from "./ReservationContext";
 import { createReservationAction } from "../_lib/actions";
 import SubmitButton from "./SubmitButton";
+import { ArrowLongLeftIcon } from "@heroicons/react/24/solid";
 
 function ReservationForm({ user, cabin }) {
   const { range, resetRange } = useReservation()
@@ -52,9 +53,9 @@ function ReservationForm({ user, cabin }) {
 
       <form
         // action={createReservationWithData} 
-        action={async (formData) => {
+        action={(formData) => {
+          createReservationWithData(formData)
           resetRange()
-          await createReservationWithData(formData)
         }}
         className='bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col'>
         <div className='space-y-2'>
@@ -89,10 +90,13 @@ function ReservationForm({ user, cabin }) {
           />
         </div>
 
-        <div className='flex justify-end items-center gap-6'>
+        <div className='flex justify-end items-center'>
           {
             !(startDate && endDate) ?
-              <p className='text-primary-300 text-base'>Start by selecting dates</p> :
+              <div className="px-8 py-4 text-primary-300 font-semibold flex items-center gap-2 cursor-pointer group">
+                <ArrowLongLeftIcon className="w-6 h-6 group-hover:-translate-x-3 transition-transform" />
+                <span>Start by selecting dates</span>
+              </div> :
               <SubmitButton pendingLabel={'Reserving...'}>
                 Reserve now
               </SubmitButton>

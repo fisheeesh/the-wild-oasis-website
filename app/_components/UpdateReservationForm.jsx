@@ -8,9 +8,11 @@ export default function UpdateReservationForm({ booking, cabin }) {
     const { id, observations, numGuest, startDate } = booking
     const { maxCapacity } = cabin
 
+    console.log(booking)
+
     return (
-        <form action={async (formData) => {
-            await updateReservationAction(formData)
+        <form action={(formData) => {
+            updateReservationAction(formData)
             toast.success('Your reservation has been updated successfully!')
         }} className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
             <div className="space-y-2">

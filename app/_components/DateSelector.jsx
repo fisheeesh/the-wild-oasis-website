@@ -32,6 +32,7 @@ function DateSelector({ settings, bookDates, cabin }) {
     <div className="flex flex-col justify-between">
       {/* Latest version */}
       <DayPicker
+        timeZone="UTC"
         className="place-self-center pt-12"
         styles={{
           months: { width: "33rem" },
@@ -41,7 +42,7 @@ function DateSelector({ settings, bookDates, cabin }) {
         mode="range"
         onSelect={(range) => setRange(range || { from: null, to: null })}
         selected={displayedRange}
-        min={minBookingLength}
+        min={minBookingLength + 1}
         max={maxBookingLength}
         startMonth={new Date()}
         endMonth={new Date(new Date().getFullYear(), 5 * 12)}

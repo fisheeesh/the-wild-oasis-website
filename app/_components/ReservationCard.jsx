@@ -12,7 +12,6 @@ export const formatDistanceFromNow = (dateStr) =>
 function ReservationCard({ booking, onDelete }) {
   const {
     id,
-    guestId,
     startDate,
     endDate,
     numNights,
@@ -22,6 +21,12 @@ function ReservationCard({ booking, onDelete }) {
     created_at,
     cabins: { name, image },
   } = booking;
+
+  const statusBgColor = (status) => {
+    if (status === 'unconfirmed') return 'bg-blue-300 text-blue-500'
+    if (status === 'checked-in') return 'bg-green-800 text-green-200'
+    if (status === 'checked-out') return 'bg-gray-400 text-gray-200'
+  }
 
   return (
     <div className='flex border border-primary-800'>
@@ -39,24 +44,34 @@ function ReservationCard({ booking, onDelete }) {
           <h3 className='text-xl font-semibold'>
             {numNights} nights in Cabin {name}
           </h3>
-          {isPast(new Date(startDate)) ? (
-            <span className='bg-yellow-800 text-yellow-200 h-7 px-3 uppercase text-xs font-bold flex items-center rounded-sm'>
-              past
-            </span>
-          ) : (
-            <span className='bg-green-800 text-green-200 h-7 px-3 uppercase text-xs font-bold flex items-center rounded-sm'>
-              upcoming
-            </span>
-          )}
+          <div className='flex items-center gap-2'>
+            <p className='text-primary-300 text-sm'>Type: </p>
+            {isPast(new Date(startDate)) ? (
+              <span className='bg-yellow-800 text-yellow-200 h-6 px-3 uppercase text-xs font-bold flex items-center rounded-sm'>
+                past
+              </span>) : (
+              <span className='bg-green-800 justify-center text-green-200 h-5 px-3 uppercase text-[10px] font-bold flex items-center rounded-sm'>
+                upcoming
+              </span>)
+            }
+          </div>
         </div>
 
-        <p className='text-lg text-primary-300'>
-          {format(new Date(startDate), 'EEE, MMM dd yyyy')} (
-          {isToday(new Date(startDate))
-            ? 'Today'
-            : formatDistanceFromNow(startDate)}
-          ) &mdash; {format(new Date(endDate), 'EEE, MMM dd yyyy')}
-        </p>
+        <div className='flex items-center justify-between'>
+          <p className='text-lg text-primary-300'>
+            {format(new Date(startDate), 'EEE, MMM dd yyyy')} (
+            {isToday(new Date(startDate))
+              ? 'Today'
+              : formatDistanceFromNow(startDate)}
+            ) &mdash; {format(new Date(endDate), 'EEE, MMM dd yyyy')}
+          </p>
+          <div className='flex items-center gap-2'>
+            <p className='text-primary-300 text-sm'>Status: </p>
+            <span className={`${statusBgColor(status)}  justify-center h-5 px-3 uppercase text-[10px] font-bold flex items-center rounded-sm`}>
+              {status}
+            </span>
+          </div>
+        </div>
 
         <div className='flex gap-5 mt-auto items-baseline'>
           <p className='text-xl font-semibold text-accent-400'>${totalPrice}</p>
