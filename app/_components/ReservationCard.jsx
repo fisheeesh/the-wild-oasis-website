@@ -23,9 +23,9 @@ function ReservationCard({ booking, onDelete }) {
   } = booking;
 
   const statusBgColor = (status) => {
-    if (status === 'unconfirmed') return 'bg-blue-300 text-blue-500'
+    if (status === 'unconfirmed') return 'bg-blue-600 text-blue-200'
     if (status === 'checked-in') return 'bg-green-800 text-green-200'
-    if (status === 'checked-out') return 'bg-gray-400 text-gray-200'
+    if (status === 'checked-out') return 'bg-gray-600 text-gray-200'
   }
 
   return (

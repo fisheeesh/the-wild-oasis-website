@@ -27,7 +27,7 @@ export default async function Page() {
                 <SelectCountry
                     name="nationality"
                     id="nationality"
-                    className="px-5 py-2.5 focus:border-accent-500 bg-primary-200 focus:outline-0 border border-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+                    className='px-5 py-3 border-2 transition duration-300 border-primary-200 focus:outline-0 focus:border-accent-600 bg-primary-200 text-primary-800 w-full shadow-sm'
                     defaultCountry={guest.nationality}
                 />
             </UpdateProfileForm>

@@ -16,12 +16,12 @@ export default function UpdateReservationForm({ booking, cabin }) {
             toast.success('Your reservation has been updated successfully!')
         }} className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
             <div className="space-y-2">
-                <label htmlFor="numGuest">How many guests?</label>
+                <label htmlFor='numGuest'>How many guests? <span className="text-red-600">* </span></label>
                 <select
                     defaultValue={numGuest}
                     name="numGuest"
                     id="numGuest"
-                    className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+                    className='px-5  py-2.5 border-2 transition duration-300 border-primary-200 focus:outline-0 focus:border-accent-600 bg-primary-200 text-primary-800 w-full shadow-sm'
                     required
                 >
                     <option value="" key="">
@@ -45,7 +45,7 @@ export default function UpdateReservationForm({ booking, cabin }) {
                     rows={5}
                     defaultValue={observations}
                     name="observations"
-                    className="px-5 resize-none py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+                    className='px-5 resize-none py-2.5 border-2 transition duration-300 border-primary-200 focus:outline-0 focus:border-accent-600 bg-primary-200 text-primary-800 w-full shadow-sm'
                 />
             </div>
 

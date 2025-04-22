@@ -59,11 +59,11 @@ function ReservationForm({ user, cabin }) {
         }}
         className='bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col'>
         <div className='space-y-2'>
-          <label htmlFor='numGuest'>How many guests?</label>
+          <label htmlFor='numGuest'>How many guests? <span className="text-red-600">* </span></label>
           <select
             name='numGuest'
             id='numGuest'
-            className='px-5 py-2.5 border border-primary-200 focus:outline-0 focus:border-accent-500 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm'
+            className='px-5 py-2.5 border-2 transition duration-300 border-primary-200 focus:outline-0 focus:border-accent-600 bg-primary-200 text-primary-800 w-full shadow-sm'
             required
           >
             <option value='' key=''>
@@ -85,7 +85,7 @@ function ReservationForm({ user, cabin }) {
             rows={4}
             name='observations'
             id='observations'
-            className='px-5 resize-none py-2.5 border border-primary-200 focus:outline-0 focus:border-accent-500 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm'
+            className='px-5 resize-none py-2.5 border-2 transition duration-300 border-primary-200 focus:outline-0 focus:border-accent-600 bg-primary-200 text-primary-800 w-full shadow-sm'
             placeholder='Any pets, allergies, special requirements, etc.?'
           />
         </div>

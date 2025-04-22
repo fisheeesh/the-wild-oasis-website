@@ -19,7 +19,7 @@ export default function UpdateProfile({ guest, children }) {
                     name="fullName"
                     defaultValue={fullName}
                     disabled
-                    className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm disabled:cursor-not-allowed disabled:bg-gray-600 disabled:text-gray-400"
+                    className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm disabled:cursor-not-allowed disabled:bg-gray-600 disabled:text-gray-400"
                 />
             </div>
 
@@ -29,7 +29,7 @@ export default function UpdateProfile({ guest, children }) {
                     name="email"
                     defaultValue={email}
                     disabled
-                    className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm disabled:cursor-not-allowed disabled:bg-gray-600 disabled:text-gray-400"
+                    className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm disabled:cursor-not-allowed disabled:bg-gray-600 disabled:text-gray-400"
                 />
             </div>
 
@@ -56,7 +56,7 @@ export default function UpdateProfile({ guest, children }) {
                     defaultValue={nationalID}
                     autoComplete="off"
                     name="nationalID"
-                    className="px-5 py-2.5 focus:outline-0 border border-primary-200 focus:border-accent-500 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+                    className='px-5 resize-none py-2.5 border-2 transition duration-300 border-primary-200 focus:outline-0 focus:border-accent-600 bg-primary-200 text-primary-800 w-full shadow-sm'
                 />
             </div>
 
