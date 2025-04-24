@@ -72,34 +72,35 @@ export const deleteReservationAction = async (bookingId) => {
 }
 
 export const updateReservationAction = async (formData) => {
-    const session = await auth()
-    if (!session) throw new Error('You must be logged in.')
+    const session = await auth();
+    if (!session) throw new Error("You must be logged in.");
 
-    const numGuest = formData.get('numGuest')
-    const observations = formData.get('observations').slice(0, 1000)
-    //# formData stores everyting as string
-    const bookingId = Number(formData.get('bookingId'))
-    const startDate = formData.get('startDate')
+    const numGuest = formData.get("numGuest");
+    const observations = formData.get("observations").slice(0, 1000);
+    const bookingId = Number(formData.get("bookingId"));
+    const startDate = formData.get("startDate");
 
-    const bookings = await getBookings(session.user.guestId)
-    const guestBookingIds = bookings.map(booking => booking.id)
+    const bookings = await getBookings(session.user.guestId);
+    const guestBookingIds = bookings.map((booking) => booking.id);
 
-    if (!guestBookingIds.includes(bookingId)) throw new Error('You are not allowed to update this booking.')
-    if (isPast(new Date(startDate))) throw new Error("Updating past reservations is not allowed.");
+    if (!guestBookingIds.includes(bookingId))
+        throw new Error("You are not allowed to update this booking.");
+    if (isPast(new Date(startDate)))
+        throw new Error("Updating past reservations is not allowed.");
 
-    const updatedData = { numGuest, observations }
+    const updatedData = { numGuest, observations };
 
     const { error } = await supabase
-        .from('bookings')
+        .from("bookings")
         .update(updatedData)
-        .eq('id', bookingId)
+        .eq("id", bookingId);
 
     if (error) {
-        throw new Error('Booking could not be updated');
+        return { success: false, message: "Booking could not be updated" };
     }
 
-    redirect('/account/reservations')
-}
+    return { success: true };
+};
 
 export const createReservationAction = async (bookingData, formData) => {
     const session = await auth()
