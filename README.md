@@ -30,6 +30,7 @@ Authentication is secured with **Google Sign-In** via **NextAuth.js**. Logged-in
   - Start date & end date.
   - Number of guests.
   - Optional observations.
+- ⏰ Remain user with alert if user selected dates and did not book it.
 - ✏️ Manage (edit/delete) your own reservations only.
 - 🚫 Past reservations are not editable or deletable.
 - 🔐 Google authentication (NextAuth.js).
@@ -62,6 +63,7 @@ Authentication is secured with **Google Sign-In** via **NextAuth.js**. Logged-in
 - **Supabase** – Backend and database.
 - **NextAuth.js** – Google authentication.
 - **React** – Frontend.
+- **Context-Api** - Global State Management via booking date range(from, to)
 - **Tailwind CSS** – Styling.
 - **Heroicons** – Icons.
 - **Date-fns** – Date utilities.
