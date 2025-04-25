@@ -99,7 +99,7 @@ export const updateReservationAction = async (formData) => {
         return { success: false, message: "Booking could not be updated" };
     }
 
-    return { success: true };
+    redirect('/account/reservations')
 };
 
 export const createReservationAction = async (bookingData, formData) => {
