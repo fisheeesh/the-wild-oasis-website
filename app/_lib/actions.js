@@ -30,6 +30,8 @@ export const updateGuestAction = async (formData) => {
     const session = await auth()
     if (!session) throw new Error('You must be logged in.')
 
+    // await new Promise(res => setTimeout(res, 2000))
+
     const nationalID = formData.get('nationalID')
     //# Actual value: Myanmar%https://flagcdn.com/mm.svg
     const [nationality, countryFlag] = formData.get('nationality').split('%')
@@ -43,10 +45,14 @@ export const updateGuestAction = async (formData) => {
         .update(updatedData)
         .eq('id', session.user.guestId)
 
-    if (error) throw new Error('Guest could not be updated');
+    if (error) {
+        return { success: false, message: "Guest could not be updated" };
+    }
 
     //# revalidate cache data after successfuly updated
-    revalidatePath("/account/profile")
+    // revalidatePath("/account/profile")
+
+    return { success: true }
 }
 
 export const deleteReservationAction = async (bookingId) => {
@@ -75,6 +81,8 @@ export const updateReservationAction = async (formData) => {
     const session = await auth();
     if (!session) throw new Error("You must be logged in.");
 
+    // await new Promise((res) => setTimeout(res, 5000));
+
     const numGuest = formData.get("numGuest");
     const observations = formData.get("observations").slice(0, 1000);
     const bookingId = Number(formData.get("bookingId"));
@@ -99,7 +107,8 @@ export const updateReservationAction = async (formData) => {
         return { success: false, message: "Booking could not be updated" };
     }
 
-    redirect('/account/reservations')
+    // redirect('/account/reservations')
+    return { success: true }
 };
 
 export const createReservationAction = async (bookingData, formData) => {

@@ -4,15 +4,24 @@ import { FlagIcon } from "@heroicons/react/24/solid"
 import { updateGuestAction } from "../_lib/actions"
 import SubmitButton from "./SubmitButton"
 import toast from "react-hot-toast"
+import { useRouter } from "next/navigation"
 
 export default function UpdateProfile({ guest, children }) {
     const { fullName, email, nationalID, countryFlag } = guest
+    const router = useRouter();
+
+    const handleSubmit = async (formData) => {
+        const result = await updateGuestAction(formData)
+        if (result?.success) {
+            router.refresh();
+            toast.success("Your profile has been updated successfully!");
+        } else {
+            toast.error(result?.message || "Failed to update profile.");
+        }
+    }
 
     return (
-        <form action={(formData) => {
-            updateGuestAction(formData)
-            toast.success('Your profile has been updated successfully!')
-        }} className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
+        <form action={handleSubmit} className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
             <div className="space-y-2">
                 <label>Full name</label>
                 <input
