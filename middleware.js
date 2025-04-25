@@ -1,17 +1,27 @@
-import { NextResponse } from "next/server";
 import { auth } from "./app/_lib/auth";
+import { NextResponse } from "next/server";
 
 //? By default, middleware runs for all routes
-// export const middleware = (request) => {
-//     console.log(request)
+export async function middleware(request) {
+    const session = await auth();
+    const { pathname } = request.nextUrl;
 
-//     //? This will be create an infite redirected loop.
-//     return NextResponse.redirect(new URL('/about', request.url))
-// }
+    // ? Protect /account/* → if NOT logged in, redirect to /login
+    if (pathname.startsWith("/account")) {
+        if (!session) {
+            return NextResponse.redirect(new URL("/login", request.url));
+        }
+    }
 
-export const middleware = auth
+    // ? Prevent logged-in users from accessing /login
+    if (pathname === "/login" && session) {
+        return NextResponse.redirect(new URL("/account", request.url));
+    }
 
-//? To prevent this, we will only run middleware for specific routes.
-export const config = {
-    matcher: ['/account']
+    return NextResponse.next();
 }
+
+export const config = {
+    //?Apply middleware to both /account/** and /login
+    matcher: ["/account/:path*", "/login"],
+};
