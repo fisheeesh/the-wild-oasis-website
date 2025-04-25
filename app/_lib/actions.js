@@ -50,9 +50,7 @@ export const updateGuestAction = async (formData) => {
     }
 
     //# revalidate cache data after successfuly updated
-    // revalidatePath("/account/profile")
-
-    return { success: true }
+    revalidatePath(`/account/profile`)
 }
 
 export const deleteReservationAction = async (bookingId) => {
@@ -103,12 +101,9 @@ export const updateReservationAction = async (formData) => {
         .update(updatedData)
         .eq("id", bookingId);
 
-    if (error) {
-        return { success: false, message: "Booking could not be updated" };
-    }
+    if (error) throw new Error("Booking could not be updated.");
 
-    // redirect('/account/reservations')
-    return { success: true }
+    redirect('/account/reservations?status=updated')
 };
 
 export const createReservationAction = async (bookingData, formData) => {
