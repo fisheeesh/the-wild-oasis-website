@@ -3,12 +3,16 @@
 import { FlagIcon } from "@heroicons/react/24/solid"
 import { updateGuestAction } from "../_lib/actions"
 import SubmitButton from "./SubmitButton"
+import toast from "react-hot-toast"
 
 export default function UpdateProfile({ guest, children }) {
     const { fullName, email, nationalID, countryFlag } = guest
 
     return (
-        <form action={updateGuestAction} className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
+        <form action={(formData) => {
+            updateGuestAction(formData)
+            toast.success('Your profile has been updated successfully!')
+        }} className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
             <div className="space-y-2">
                 <label>Full name</label>
                 <input
