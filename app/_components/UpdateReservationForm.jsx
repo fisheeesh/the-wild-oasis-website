@@ -1,22 +1,11 @@
 "use client"
 
-import { useRouter } from 'next/navigation';
 import { updateReservationAction } from '../_lib/actions';
 import SubmitButton from './SubmitButton';
 
 export default function UpdateReservationForm({ booking, cabin }) {
     const { id, observations, numGuest, startDate } = booking
     const { maxCapacity } = cabin
-
-    // const handleSubmit = async (formData) => {
-    //     const result = await updateReservationAction(formData);
-    //     if (result?.success) {
-    //         router.push("/account/reservations");
-    //         toast.success("Your reservation has been updated successfully!");
-    //     } else {
-    //         toast.error(result?.message || "Failed to update reservation.");
-    //     }
-    // }‚
 
     return (
         <form action={updateReservationAction} className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col">
