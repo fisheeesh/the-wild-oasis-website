@@ -121,7 +121,7 @@ npm run dev
 ```
 
 ## Live Demo
-Check out the live version of The Wild Oasis Website: https://the-wild-oasis-website-eta-flame.vercel.app
+Check out the live version of The Wild Oasis Website: https://www.thewildoasis.co/
 
 ## License
 
