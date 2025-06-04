@@ -4,6 +4,7 @@ import { createGuest, getGuest } from "./data-service"
 
 export const authConfig = {
     providers: [Google],
+    secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
         authorized({ auth, request }) {
             return !!auth?.user
@@ -35,7 +36,7 @@ export const authConfig = {
             const guest = await getGuest(session.user.email)
             session.user.guestId = guest.id
 
-            return session 
+            return session
         }
     },
     pages: {
