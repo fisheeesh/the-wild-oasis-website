@@ -36,7 +36,7 @@ function ReservationForm({ user, cabin }) {
 
   return (
     <div className='scale-[1.005]'>
-      <div className='bg-primary-800 text-primary-300 px-16 py-2 flex justify-between items-center'>
+      <div className='bg-primary-800 text-primary-300 px-5 lg:px-16 py-2 flex justify-between items-center'>
         <p>Logged in as</p>
 
         <div className='flex gap-4 items-center'>
@@ -57,7 +57,7 @@ function ReservationForm({ user, cabin }) {
           createReservationWithData(formData)
           resetRange()
         }}
-        className='bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col'>
+        className='bg-primary-900 py-10 px-5 lg:px-16 text-lg flex gap-5 flex-col'>
         <div className='space-y-2'>
           <label htmlFor='numGuest'>How many guests? <span className="text-red-600">* </span></label>
           <select
