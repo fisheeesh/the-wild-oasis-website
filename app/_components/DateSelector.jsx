@@ -33,7 +33,7 @@ function DateSelector({ settings, bookDates, cabin }) {
       {/* Latest version */}
       <DayPicker
         timeZone="UTC"
-        className="place-self-center pt-12"
+        className="flex items-center justify-center py-6 min-[1025px]:pt-20 px-[50%] sm:px-0"
         styles={{
           months: { width: "33rem" },
           day: { width: "32px", height: "32px" },
@@ -67,8 +67,8 @@ function DateSelector({ settings, bookDates, cabin }) {
         disabled={{ before: new Date() }}
       /> */}
 
-      <div className="flex items-center justify-between px-8 bg-accent-500 text-primary-800 h-[72px]">
-        <div className="flex items-baseline gap-6">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between py-2 px-5 md:px-8 bg-accent-500 text-primary-800 h-auto md:h-[72px]">
+        <div className="flex items-center gap-6">
           <p className="flex gap-2 items-baseline">
             {discount > 0 ? (
               <>
@@ -84,10 +84,10 @@ function DateSelector({ settings, bookDates, cabin }) {
           </p>
           {numNights ? (
             <>
-              <p className="bg-accent-600 px-3 py-2 text-2xl">
+              <p className="bg-accent-600 px-3 py-2 text-lg md:text-xl lg:text-2xl">
                 <span>&times;</span> <span>{numNights}</span>
               </p>
-              <p>
+              <p className="">
                 <span className="text-lg font-bold uppercase">Total</span>{" "}
                 <span className="text-2xl font-semibold">${cabinPrice}</span>
               </p>
@@ -97,7 +97,7 @@ function DateSelector({ settings, bookDates, cabin }) {
 
         {range.from || range.to ? (
           <button
-            className="border border-primary-800 py-2 px-4 text-sm font-semibold"
+            className="border w-fit cursor-pointer hover:bg-primary-800 hover:text-primary-200 transition duration-200 border-primary-800 py-2 px-4 text-sm font-semibold"
             onClick={resetRange}
           >
             Clear
