@@ -8,8 +8,14 @@ export default function NavLinks({ user }) {
     const pathname = usePathname()
 
     const isActive = (href) => `hover:text-accent-400 transition-colors ${href === pathname ? 'text-accent-400' : ''}`
+    
     return (
-        <ul className="flex gap-16 items-center">
+        <ul className="flex gap-10 items-center">
+            <li>
+                <Link href="/" className={isActive('/')}>
+                    Home
+                </Link>
+            </li>
             <li>
                 <Link href="/cabins" className={isActive('/cabins')}>
                     Cabins
@@ -23,7 +29,7 @@ export default function NavLinks({ user }) {
             <li>
                 {
                     user?.image ?
-                        <Link href="/account" className={`${isActive('/account')} flex items-center gap-4` }>
+                        <Link href="/account" className={`${isActive('/account')} flex items-center gap-4`}>
                             <img referrerPolicy='no-referrer' src={user.image} className='h-8 rounded-full' alt={user.name} />
                             <span>Guest area</span>
                         </Link> :
