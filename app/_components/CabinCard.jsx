@@ -6,17 +6,19 @@ function CabinCard({ cabin }) {
   const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
 
   return (
-    <div className="flex border-primary-800 border">
-      <div className="flex-1 relative">
+    <div className="flex flex-col md:flex-row border border-primary-800">
+      {/* Image section */}
+      <div className="relative w-full h-[200px] md:w-[25%] lg:w-[35%] md:h-auto">
         <Image
-          fill
           src={image}
           alt={`Cabin ${name}`}
+          fill
+          className="object-cover border-b md:border-b-0 md:border-r border-primary-800"
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover border-r border-primary-800"
         />
       </div>
 
+      {/* Content section */}
       <div className="flex-grow">
         <div className="pt-5 pb-4 px-7 bg-primary-950">
           <h3 className="text-accent-500 font-semibold text-2xl mb-3">
@@ -47,7 +49,7 @@ function CabinCard({ cabin }) {
           </p>
         </div>
 
-        <div className="bg-primary-950 border-t border-t-primary-800 text-right">
+        <div className="bg-primary-950 border-t border-primary-800 text-right">
           <Link
             href={`/cabins/${id}`}
             className="border-l border-primary-800 py-4 px-6 inline-block hover:bg-accent-600 transition-all hover:text-primary-900"

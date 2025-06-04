@@ -44,7 +44,7 @@ export default async function Page({ searchParams }) {
             </div>
 
             {/* Suspense needs to be outside of the component that does async work */}
-            {/* If all a component / page does is data loading, then it doesn't need to be wrapped in Suspense */}
+            {/* If a component / page does is data loading, then it doesn't need to be wrapped in Suspense */}
             {/* Whenever the key value changes, the fallback  will be shown again. */}
             {/* Server components re-render whenever there is navigation. */}
             <Suspense fallback={<Spinner />} key={filter}>
