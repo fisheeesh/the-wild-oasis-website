@@ -13,7 +13,7 @@ export default function LegalNoticePage() {
             </div>
             <div className="space-y-6 sm:text-xl text-base">
                 <h3 className="text-2xl sm:text-4xl font-bold pb-2">Responsible for the Website</h3>
-                <p><strong>Company Name:</strong> Swam Yi Phyo</p>
+                <p><strong>Company Name:</strong> SWAM YI PHYO</p>
                 <p><strong>Legal Form:</strong> Sole Proprietor (บุคคลธรรมดา)</p>
                 <p><strong>Headquarters Address:</strong> STK Resort, Mae-Fah-Luang, Chiang Rai, 57100, Thailand</p>
                 <p><strong>Registration Number:</strong> 0105567890123  </p>

@@ -68,7 +68,7 @@ export default async function Page({ params }) {
                         <Reservation cabin={cabin} />
                     </Suspense>
                 </div>
-                <CabinFeature />
+                <CabinFeature guests={cabin.maxCapacity} />
                 <CabinAmenities />
                 <HotelAmenities />
                 <HotelRules />

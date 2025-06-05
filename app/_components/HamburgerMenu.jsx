@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation"
 import { useState } from "react"
 import ConfirmLogout from "./ConfirmLogout"
 import Modal from "./Modal"
-import SignOutButton from "./SignOutButton"
 
 export default function HamburgerMenu({ user }) {
     const [isMobMenuOpen, setIsMobMenuOpen] = useState(false)
@@ -47,9 +46,10 @@ export default function HamburgerMenu({ user }) {
                             {!!user &&
                                 <Modal>
                                     <Modal.Opens open={'sign-out'}>
-                                        <div>
-                                            <SignOutButton />
-                                        </div>
+                                        <button type='button' className='cursor-pointer hover:bg-primary-900 hover:text-primary-100 transition-colors flex items-center gap-4 font-semibold text-primary-200 w-full'>
+                                            <ArrowRightOnRectangleIcon className='h-5 w-5 text-primary-600' />
+                                            <span>Sign out</span>
+                                        </button>
                                     </Modal.Opens>
 
                                     <Modal.Window name={'sign-out'}>

@@ -1,4 +1,4 @@
-import { AirVent, CigaretteOff, Heater, Monitor, Phone, Vault, Wifi, Waves } from 'lucide-react'
+import { AirVent, Bath, CigaretteOff, Heater, Monitor, Phone, Waves, Wifi } from 'lucide-react'
 
 const amenities = [
     {
@@ -10,8 +10,8 @@ const amenities = [
         text: 'Free Wifi'
     },
     {
-        icon: <Vault />,
-        text: 'Safe'
+        icon: <Bath />,
+        text: 'Bath Tub'
     },
     {
         icon: <CigaretteOff />,

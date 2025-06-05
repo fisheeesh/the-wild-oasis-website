@@ -42,10 +42,10 @@ export default function CabinFeature({ guests }) {
 
             <div className="space-y-10 pb-8 border-b border-b-primary-800">
                 <p>
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+                    Discover the ultimate luxury getaway nestled deep in a picturesque forest. Each of our wooden cabins offers a secluded and intimate retreat designed for relaxation and connection with nature. Step inside to find warm, high-quality wood interiors, cozy living areas with fireplaces, fully-equipped kitchens, and spa-inspired bathrooms. Whether you're enjoying a peaceful night in a plush king-size bed or unwinding on your private deck with a hot tub, every detail is crafted to elevate your stay.
                 </p>
                 <p>
-                    The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown
+                    Perfect for couples, families, or groups, our cabins come in various sizes to accommodate different needs without compromising comfort or style. From romantic escapes to grand family vacations, every cabin blends luxury and nature to create a serene and unforgettable experience. Escape the noise, breathe in the mountain air, and indulge in the comfort of your own private oasis.
                 </p>
             </div>
         </div>
