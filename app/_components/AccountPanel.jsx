@@ -30,7 +30,7 @@ const navLinks = [
 export default function AccountPanel() {
     const pathname = usePathname()
 
-    const isActive = (href) => `${pathname === href ? 'bg-primary-900 text-primary-100' : ''} py-2 px-5 hover:bg-primary-900 hover:text-primary-100 transition-colors flex items-center gap-4 font-semibold text-primary-200`
+    const isActive = (href) => `${pathname === href ? 'bg-primary-900 cursor-not-allowed text-primary-100' : ''} py-2 px-5 hover:bg-primary-900 hover:text-primary-100 transition-colors flex items-center gap-4 font-semibold text-primary-200`
 
     return (
         <div className="flex h-fit lg:hidden justify-end">

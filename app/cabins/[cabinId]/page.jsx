@@ -1,4 +1,9 @@
 import Cabin from "@/app/_components/Cabin";
+import CabinAmenities from "@/app/_components/cabin/CabinAmenities";
+import CabinFeature from "@/app/_components/cabin/CabinFeature";
+import HotelAmenities from "@/app/_components/cabin/HotelAmenities";
+import HotelRules from "@/app/_components/cabin/HotelRules";
+import Footer from "@/app/_components/Footer";
 import Reservation from "@/app/_components/Reservation";
 import Spinner from "@/app/_components/Spinner";
 import { getCabin, getCabins } from "@/app/_lib/data-service";
@@ -50,18 +55,25 @@ export default async function Page({ params }) {
     // ])
 
     return (
-        <div className="max-w-6xl mx-auto mt-8">
-            <Cabin cabin={cabin} />
+        <>
+            <div className="max-w-6xl mx-auto mt-8">
+                <Cabin cabin={cabin} />
 
-            <div>
-                <h2 className="text-5xl font-semibold text-center mb-10 text-accent-400">
-                    Reserve {cabin.name} today. Pay on arrival.
-                </h2>
+                <div>
+                    <h2 className="text-5xl font-semibold text-center mb-10 text-accent-500">
+                        Reserve {cabin.name} today. Pay on arrival.
+                    </h2>
 
-                <Suspense fallback={<Spinner />}>
-                    <Reservation cabin={cabin} />
-                </Suspense>
+                    <Suspense fallback={<Spinner />}>
+                        <Reservation cabin={cabin} />
+                    </Suspense>
+                </div>
+                <CabinFeature />
+                <CabinAmenities />
+                <HotelAmenities />
+                <HotelRules />
             </div>
-        </div>
+            <Footer />
+        </>
     );
 }
