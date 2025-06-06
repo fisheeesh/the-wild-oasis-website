@@ -168,3 +168,10 @@
 .open .hamburger-bottom {
   transform: rotate(-45deg) translateY(6px) translateX(-6px);
 }
+
+.bg-hero {
+  background-image: url('/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
