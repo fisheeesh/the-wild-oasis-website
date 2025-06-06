@@ -5,9 +5,9 @@ import Image from 'next/image'
 
 export default function Intro() {
     return (
-        <section className="relative z-[10] flex gap-16 lg:gap-0 lg:items-center flex-col lg:flex-row mb-[100px] xl:mb-[400px]">
+        <section className="relative z-[10] mt-10 flex gap-16 lg:gap-0 lg:items-center flex-col lg:flex-row mb-[100px] xl:mb-[400px]">
             <div className="space-y-16 w-full lg:w-1/2">
-                <div className="flex items-center gap-12 lg:gap-20">
+                <div className="flex flex-col md:items-center md:flex-row md:gap-12 gap-6">
                     <div className="flex items-baseline gap-6">
                         <h1 className="text-7xl font-semibold">5</h1>
                         <span className="text-2xl tracking-[0.3rem]">stars</span>
