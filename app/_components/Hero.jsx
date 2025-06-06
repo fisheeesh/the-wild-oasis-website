@@ -1,21 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 import bg from '@/public/bg.png'
 
 export default function Hero() {
     return (
-        <section className="relative w-full h-screen">
-            {/* Full-screen background image */}
-            <Image
-                src={bg}
-                fill
-                quality={80}
-                placeholder="blur"
-                alt="Mountains and forests with two cabins"
-                className="object-cover object-top"
-            />
+        <main className="mt-24 w-full h-screen">
+            <Image src={bg} quality={80} fill className="object-cover object-top" placeholder="blur" alt="Mountains and forests with two cabins" />
 
-            {/* Content centered on top of image */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4">
                 <h1 className="lg:text-8xl md:text-6xl sm:text-5xl text-4xl text-primary-50 mb-10 tracking-tight font-normal">
                     Welcome to paradise.
@@ -27,6 +19,6 @@ export default function Hero() {
                     Explore luxury cabins
                 </Link>
             </div>
-        </section>
+        </main>
     )
 }
