@@ -9,7 +9,7 @@ export default function Offers() {
     return (
         <section className='py-20 space-y-8'>
             <div className='flex justify-between items-center gap-2'>
-                <h1 className='text-4xl uppercase tracking-wide'>Cabins Availability</h1>
+                <h1 className='sm:text-5xl text-4xl uppercase tracking-wide'>Cabins Availability</h1>
                 <Link href={'/cabins'} type='button' className='hidden sm:block uppercase border px-4 py-3 hover:bg-accent-500 hover:text-primary-100 hover:border-accent-500 duration-200 transition'>
                     All Cabins
                 </Link>
@@ -33,14 +33,14 @@ export default function Offers() {
                             <Users size={20} /> Max 2 Guests
                         </div>
                     </div>
-                    <Link href={'/cabins'} className='uppercase text-lg w-fit'>See Detail</Link>
+                    <Link href={'/cabins'} className='uppercase sm:text-lg w-fit'>See Detail</Link>
                     <hr className='border-primary-800' />
                     <div className='flex items-center justify-between gap-2'>
                         <div>
                             Start from  <br />
-                            <span className='font-bold text-2xl uppercase'>$450</span> <span className='text-sm'>/ night</span>
+                            <span className='font-bold text-xl sm:text-2xl uppercase'>$450</span> <span className='text-sm'>/ night</span>
                         </div>
-                        <Link href={'/cabins'} className='uppercase text-lg border border-primary-800 px-4 py-3 hover:bg-accent-500 hover:border-accent-500 hover:text-primary-100 duration-200 transition'>
+                        <Link href={'/cabins'} className='uppercase sm:text-lg  border border-primary-800 px-4 py-3 hover:bg-accent-500 hover:border-accent-500 hover:text-primary-100 duration-200 transition'>
                             Check Availability
                         </Link>
                     </div>
@@ -63,14 +63,14 @@ export default function Offers() {
                             <Users size={20} /> Max 4 Guests
                         </div>
                     </div>
-                    <Link href={'/cabins'} className='uppercase text-lg'>See Detail</Link>
+                    <Link href={'/cabins'} className='uppercase sm:text-lg'>See Detail</Link>
                     <hr className='border-primary-800' />
                     <div className='flex items-center justify-between gap-2'>
                         <div>
                             Start from  <br />
-                            <span className='font-bold text-2xl uppercase'>$300</span> <span className='text-sm'>/ night</span>
+                            <span className='font-bold text-xl sm:text-2xl uppercase'>$300</span> <span className='text-sm'>/ night</span>
                         </div>
-                        <Link href={'/cabins'} className='uppercase text-lg border border-primary-800 px-4 py-3 hover:bg-accent-500 hover:border-accent-500 hover:text-primary-100 duration-200 transition'>
+                        <Link href={'/cabins'} className='uppercase sm:text-lg border border-primary-800 px-4 py-3 hover:bg-accent-500 hover:border-accent-500 hover:text-primary-100 duration-200 transition'>
                             Check Availability
                         </Link>
                     </div>
@@ -93,14 +93,14 @@ export default function Offers() {
                             <Users size={20} /> Max 6 Guests
                         </div>
                     </div>
-                    <Link href={'/cabins'} className='uppercase text-lg'>See Detail</Link>
+                    <Link href={'/cabins'} className='uppercase sm:text-lg'>See Detail</Link>
                     <hr className='border-primary-800' />
                     <div className='flex items-center justify-between gap-2'>
                         <div>
                             Start from  <br />
-                            <span className='font-bold text-2xl uppercase'>$350</span> <span className='text-sm'>/ night</span>
+                            <span className='font-bold text-xl sm:text-2xl uppercase'>$350</span> <span className='text-sm'>/ night</span>
                         </div>
-                        <Link href={'/cabins'} className='uppercase text-lg border border-primary-800 px-4 py-3 hover:bg-accent-500 hover:border-accent-500 hover:text-primary-100 duration-200 transition'>
+                        <Link href={'/cabins'} className='uppercase sm:text-lg border border-primary-800 px-4 py-3 hover:bg-accent-500 hover:border-accent-500 hover:text-primary-100 duration-200 transition'>
                             Check Availability
                         </Link>
                     </div>

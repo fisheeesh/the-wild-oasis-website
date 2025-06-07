@@ -48,7 +48,7 @@ export default function HotelFacilities() {
     return (
         <section className='py-24 space-y-12'>
             <div className='flex flex-col items-center justify-center space-y-8'>
-                <h1 className='text-4xl uppercase tracking-wide'>Hotel Facilities</h1>
+                <h1 className='sm:text-5xl text-4xl uppercase tracking-wide'>Hotel Facilities</h1>
                 <p className='max-w-3xl text-xl text-center'>
                     A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
                 </p>
