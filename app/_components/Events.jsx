@@ -47,7 +47,7 @@ export default function Events() {
             opacity: 1,
             y: 0,
             transition: {
-                delay: i * 0.2,
+                delay: i * 0.25,
                 duration: 0.6,
                 ease: 'easeOut',
             },

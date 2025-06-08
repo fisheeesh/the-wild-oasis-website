@@ -1,4 +1,5 @@
 import Copyright from "../_components/Copyright"
+import HeaderSection from "../_components/HeaderSection"
 
 export const metadata = {
     title: 'Legal Notice'
@@ -9,7 +10,7 @@ export default function LegalNoticePage() {
         <section className="space-y-12 pt-12">
             <div className="flex items-center gap-6 pb-12">
                 <div className="flex-1 h-[1px] bg-primary-800"></div>
-                <h1 className="text-4xl sm:text-5xl text-accent-500 font-bold">Legal Notice.</h1>
+                <HeaderSection title='Legal Notice' />
             </div>
             <div className="space-y-6 sm:text-xl text-base">
                 <h3 className="text-2xl sm:text-4xl font-bold pb-2">Responsible for the Website</h3>

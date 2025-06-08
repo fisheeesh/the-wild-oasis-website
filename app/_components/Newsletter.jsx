@@ -18,7 +18,7 @@ export default function Newsletter() {
                 ref={pRef}
                 initial={{ opacity: 0, y: 40 }}
                 animate={pInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, ease: 'easeOut' }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
                 className='text-xl font-medium text-center'
             >
                 Subscribe to the newsletter to get updates on news and promotions!
@@ -28,7 +28,7 @@ export default function Newsletter() {
                 ref={formRef}
                 initial={{ opacity: 0, y: 40 }}
                 animate={formInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+                transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
                 className='flex items-center flex-col md:flex-row gap-4'
             >
                 <input

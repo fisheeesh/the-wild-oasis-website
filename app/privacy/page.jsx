@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Copyright from "../_components/Copyright"
+import HeaderSection from "../_components/HeaderSection";
 
 export const metadata = {
     title: 'Privacy'
@@ -10,7 +11,7 @@ export default function PrivacyPage() {
         <section className="space-y-12 pt-12">
             <div className="flex items-center gap-6 pb-12">
                 <div className="flex-1 h-[1px] bg-primary-800"></div>
-                <h1 className="text-4xl sm:text-5xl text-accent-500 font-bold">Privacy.</h1>
+                <HeaderSection title='Privacy' />
             </div>
 
             <p className="sm:text-xl text-base"><strong>Launched Date: </strong> April 11, 2025</p>
