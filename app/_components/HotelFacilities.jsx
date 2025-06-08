@@ -79,7 +79,7 @@ export default function HotelFacilities() {
                     </div>
                     <div className='relative'>
                         <Image src={spool} alt='restaurant' className='object-cover object-center w-full md:w-[400px] h-[270px]' />
-                        <div className='absolute uppercase bottom-5 left-5 text-xl px-4 py-1 bg-primary-800 text-center tracking-wide'>Swimmin Pool</div>
+                        <div className='absolute uppercase bottom-5 left-5 text-xl px-4 py-1 bg-primary-800 text-center tracking-wide'>Swimming Pool</div>
                     </div>
                 </div>
                 <div className='relative'>
