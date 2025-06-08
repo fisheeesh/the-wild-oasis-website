@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function Intro() {
     return (
-        <section className="relative z-[10] mt-10 flex gap-16 lg:gap-0 lg:items-center flex-col lg:flex-row mb-[100px] xl:mb-[400px]">
+        <section className="relative z-[10] mt-10 flex gap-16 lg:gap-0 lg:items-center flex-col lg:flex-row mb-12 xl:mb-[400px]">
             <div className="space-y-16 w-full lg:w-1/2">
                 <div className="flex flex-col md:items-center md:flex-row md:gap-12 gap-6">
                     <div className="flex items-baseline gap-6">
