@@ -1,7 +1,7 @@
-import swim from '@/public/swim.webp'
-import resort from '@/public/resort.webp'
-import Link from 'next/link'
+import intro2 from '@/public/intro-2.webp'
+import intro1 from '@/public/intro-1.webp'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Intro() {
     return (
@@ -25,10 +25,10 @@ export default function Intro() {
                 </Link>
             </div>
             <div className="flex lg:justify-end w-full lg:w-1/2 pr-10">
-                <Image src={swim} className="rounded-tl-4xl rounded-br-4xl" alt="hero image" height={500} />
+                <Image src={intro2} className="rounded-tl-4xl rounded-br-4xl" alt="hero image" height={500} />
             </div>
             <div className="absolute xl:block hidden bottom-0 right-0 pr-10 top-[350px]">
-                <Image src={resort} className="rounded-tl-4xl rounded-br-4xl" alt="hero image" height={500} />
+                <Image src={intro1} className="rounded-tl-4xl rounded-br-4xl" alt="hero image" height={500} />
             </div>
         </section>
     )
