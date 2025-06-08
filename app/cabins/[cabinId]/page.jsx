@@ -6,6 +6,7 @@ import HotelRules from "@/app/_components/cabin/HotelRules";
 import Footer from "@/app/_components/Footer";
 import Reservation from "@/app/_components/Reservation";
 import Spinner from "@/app/_components/Spinner";
+import SplideImages from "@/app/_components/SplideImages";
 import { getCabin, getCabins } from "@/app/_lib/data-service";
 import { Suspense } from "react";
 
@@ -73,6 +74,7 @@ export default async function Page({ params }) {
                 <HotelAmenities />
                 <HotelRules />
             </div>
+            <SplideImages />
             <Footer />
         </>
     );
