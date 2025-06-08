@@ -1,4 +1,7 @@
+'use client'
+
 import { UsersIcon } from "@heroicons/react/24/solid";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,7 +9,12 @@ function CabinCard({ cabin }) {
   const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
 
   return (
-    <div className="flex flex-col md:flex-row border border-primary-800">
+    <motion.div
+      initial={{ y: 40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="flex flex-col md:flex-row border border-primary-800"
+    >
       {/* Image section */}
       <div className="relative w-full h-[200px] md:w-[25%] lg:w-[35%] md:h-auto">
         <Image
@@ -58,7 +66,7 @@ function CabinCard({ cabin }) {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

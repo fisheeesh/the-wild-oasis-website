@@ -3,16 +3,16 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
-import image1 from '@/public/1.webp';
+// import image1 from '@/public/1.webp';
 import image2 from '@/public/2.webp';
 import image3 from '@/public/3.webp';
 import image4 from '@/public/4.webp';
 import image5 from '@/public/5.webp';
 import image6 from '@/public/6.webp';
-import image7 from '@/public/7.webp';
+// import image7 from '@/public/7.webp';
 import Image from 'next/image';
 
-const images = [image1, image2, image3, image4, image5, image6, image7];
+const images = [image3, image4, image5, image6, image2];
 
 export default function SplideImages() {
     return (

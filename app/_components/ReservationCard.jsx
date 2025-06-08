@@ -1,3 +1,5 @@
+"use client"
+
 import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/solid';
 import { format, formatDistance, isPast, isToday, parseISO } from 'date-fns';
 import Image from 'next/image';
@@ -6,6 +8,7 @@ import DeleteReservation from './DeleteReservation';
 import DeleteReservationModal from './DeleteReservationModal';
 import Menus from './Menu';
 import Modal from './Modal';
+import { motion } from "framer-motion";
 
 export const formatDistanceFromNow = (dateStr) =>
   formatDistance(parseISO(dateStr), new Date(), {
@@ -32,7 +35,11 @@ function ReservationCard({ booking, onDelete }) {
   }
 
   return (
-    <div className='flex md:flex-row flex-col border border-primary-800'>
+    <motion.div
+      initial={{ y: 40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className='flex md:flex-row flex-col border border-primary-800'>
       <div className='relative h-44 md:h-34 lg:h-36 aspect-square'>
         <Image
           fill
@@ -129,7 +136,7 @@ function ReservationCard({ booking, onDelete }) {
             </> : null
         }
       </div>
-    </div>
+    </motion.div>
   );
 }
 
