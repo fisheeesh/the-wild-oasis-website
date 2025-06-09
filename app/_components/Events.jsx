@@ -58,41 +58,102 @@ export default function Events() {
         <section ref={ref} className='py-20 flex flex-col gap-8'>
             <h1 className='text-4xl sm:text-5xl uppercase sm:text-center tracking-wide font-bold'>Upcoming Events</h1>
             <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7'>
-                {events.map((event, index) => (
-                    <motion.div
-                        key={event.name}
-                        className='flex flex-col space-y-4'
-                        custom={index}
-                        initial="hidden"
-                        animate={controls}
-                        variants={cardVariants}
+                <motion.div
+                    className='flex flex-col space-y-4'
+                    custom={0}
+                    initial="hidden"
+                    animate={controls}
+                    variants={cardVariants}
+                >
+                    <div className='relative h-[250px] aspect-square'>
+                        <Image
+                            fill
+                            src={sharing}
+                            alt={'Sharing is Caring'}
+                            className='object-cover object-center'
+                        />
+                    </div>
+                    <h1 className='text-3xl tracking-wide uppercase font-medium'>Sharing is Caring</h1>
+                    <div className='flex flex-col md:flex-row md:items-center gap-2 md:gap-4'>
+                        <div className='flex items-center gap-2 text-sm'>
+                            <CalendarDays size={20} /> 12 November 2025
+                        </div>
+                        <span className='hidden md:inline'>|</span>
+                        <div className='flex items-center gap-2'>
+                            <Clock3 size={20} /> 3:00 - 5:00 PM
+                        </div>
+                    </div>
+                    <div
+                        onClick={handleClick}
+                        className='uppercase text-lg border-b cursor-pointer border-b-primary-800 w-fit'
                     >
-                        <div className='relative h-[250px] aspect-square'>
-                            <Image
-                                fill
-                                src={event.image}
-                                alt={event.name}
-                                className='object-cover object-center'
-                            />
+                        See Detail
+                    </div>
+                </motion.div>
+                <motion.div
+                    className='flex flex-col space-y-4'
+                    custom={1}
+                    initial="hidden"
+                    animate={controls}
+                    variants={cardVariants}
+                >
+                    <div className='relative h-[250px] aspect-square'>
+                        <Image
+                            fill
+                            src={dinner}
+                            alt="Romantic Dinner"
+                            className='object-cover object-center'
+                        />
+                    </div>
+                    <h1 className='text-3xl tracking-wide uppercase font-medium'>Romantic Dinner</h1>
+                    <div className='flex flex-col md:flex-row md:items-center gap-2 md:gap-4'>
+                        <div className='flex items-center gap-2 text-sm'>
+                            <CalendarDays size={20} /> 11 December 2025
                         </div>
-                        <h1 className='text-3xl tracking-wide uppercase font-medium'>{event.name}</h1>
-                        <div className='flex flex-col md:flex-row md:items-center gap-2 md:gap-4'>
-                            <div className='flex items-center gap-2 text-sm'>
-                                <CalendarDays size={20} /> {event.date}
-                            </div>
-                            <span className='hidden md:inline'>|</span>
-                            <div className='flex items-center gap-2'>
-                                <Clock3 size={20} /> {event.time}
-                            </div>
+                        <span className='hidden md:inline'>|</span>
+                        <div className='flex items-center gap-2'>
+                            <Clock3 size={20} /> 8:00 - 11:00 PM
                         </div>
-                        <div
-                            onClick={handleClick}
-                            className='uppercase text-lg border-b cursor-pointer border-b-primary-800 w-fit'
-                        >
-                            See Detail
+                    </div>
+                    <div
+                        onClick={handleClick}
+                        className='uppercase text-lg border-b cursor-pointer border-b-primary-800 w-fit'
+                    >
+                        See Detail
+                    </div>
+                </motion.div>
+                <motion.div
+                    className='flex flex-col space-y-4'
+                    custom={2}
+                    initial="hidden"
+                    animate={controls}
+                    variants={cardVariants}
+                >
+                    <div className='relative h-[250px] aspect-square'>
+                        <Image
+                            fill
+                            src={newyear}
+                            alt={'Party New Year Eve'}
+                            className='object-cover object-center'
+                        />
+                    </div>
+                    <h1 className='text-3xl tracking-wide uppercase font-medium'>Party New Year Eve</h1>
+                    <div className='flex flex-col md:flex-row md:items-center gap-2 md:gap-4'>
+                        <div className='flex items-center gap-2 text-sm'>
+                            <CalendarDays size={20} /> 31 December 2025
                         </div>
-                    </motion.div>
-                ))}
+                        <span className='hidden md:inline'>|</span>
+                        <div className='flex items-center gap-2'>
+                            <Clock3 size={20} /> 10:00 PM - 1:00 AM
+                        </div>
+                    </div>
+                    <div
+                        onClick={handleClick}
+                        className='uppercase text-lg border-b cursor-pointer border-b-primary-800 w-fit'
+                    >
+                        See Detail
+                    </div>
+                </motion.div>
             </div>
         </section>
     );
