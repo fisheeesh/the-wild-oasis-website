@@ -39,10 +39,11 @@ export default function HighlightImages() {
                     key={index}
                     className={`${image === 'combo' ? 'flex flex-col gap-8' : 'relative'
                         }`}
-                    custom={index}
-                    initial="hidden"
-                    animate={controls}
                     variants={itemVariant}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    custom={index}
                 >
                     {image === 'combo' ? (
                         <>

@@ -69,11 +69,12 @@ export default function Offers() {
 
             <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7'>
                 <motion.div
-                    className='flex flex-col space-y-4'
-                    custom={0}
-                    initial="hidden"
-                    animate={controls}
+                    className="flex flex-col space-y-4"
                     variants={cardVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    custom={0}
                 >
                     <Link href={'/cabins/87'} className='relative h-[250px] aspect-square'>
                         <Image
@@ -105,11 +106,12 @@ export default function Offers() {
                     </div>
                 </motion.div>
                 <motion.div
-                    className='flex flex-col space-y-4'
-                    custom={1}
-                    initial="hidden"
-                    animate={controls}
+                    className="flex flex-col space-y-4"
                     variants={cardVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    custom={1}
                 >
                     <Link href={'/cabins/89'} className='relative h-[250px] aspect-square'>
                         <Image
@@ -141,11 +143,12 @@ export default function Offers() {
                     </div>
                 </motion.div>
                 <motion.div
-                    className='flex flex-col space-y-4'
-                    custom={2}
-                    initial="hidden"
-                    animate={controls}
+                    className="flex flex-col space-y-4"
                     variants={cardVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    custom={2}
                 >
                     <Link href={'/cabins/91'} className='relative h-[250px] aspect-square'>
                         <Image
@@ -183,6 +186,6 @@ export default function Offers() {
                     All Cabins
                 </Link>
             </div>
-        </section>
+        </section >
     );
 }
