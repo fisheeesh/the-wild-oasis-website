@@ -1,20 +1,12 @@
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { motion, useInView, useAnimation } from 'framer-motion';
-import { useEffect, useRef } from 'react';
 
+import hspa from '@/public/hspa.webp';
 import restaurant from '@/public/restaurant.webp';
 import spool from '@/public/spool.webp';
 import tennis from '@/public/tennis.webp';
-import hspa from '@/public/hspa.webp';
 
 export default function HighlightImages() {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: '-200px' });
-    const controls = useAnimation();
-
-    useEffect(() => {
-        if (isInView) controls.start('visible');
-    }, [isInView, controls]);
 
     const itemVariant = {
         hidden: { opacity: 0, y: 50 },
@@ -31,7 +23,6 @@ export default function HighlightImages() {
 
     return (
         <section
-            ref={ref}
             className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center items-center mb-20"
         >
             {[restaurant, 'combo', hspa].map((image, index) => (

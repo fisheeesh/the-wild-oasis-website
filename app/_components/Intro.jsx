@@ -39,7 +39,7 @@ export default function Intro() {
                     </div>
                     <div className="flex items-baseline gap-6">
                         <h1 className="text-7xl font-semibold">8</h1>
-                        <span className="text-2xl tracking-[0.3rem]">rooms</span>
+                        <span className="text-2xl tracking-[0.3rem]">cabins</span>
                     </div>
                 </div>
                 <p className="tracking-widest text-3xl font-medium lg:max-w-2xl">
