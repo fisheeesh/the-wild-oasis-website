@@ -1,35 +1,38 @@
+'use client';
+
 import intro2 from '@/public/intro-2.webp';
 import intro1 from '@/public/intro-1.webp';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useAnimation, useInView } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 export default function Intro() {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: '-100px' });
+    const leftRef = useRef(null);
+    const rightRef = useRef(null);
+
+    const leftInView = useInView(leftRef, { once: true, margin: '-150px' });
+    const rightInView = useInView(rightRef, { once: true, margin: '-150px' });
 
     const leftControls = useAnimation();
     const rightControls = useAnimation();
 
     useEffect(() => {
-        if (isInView) {
-            leftControls.start({ opacity: 1, x: 0 });
-            rightControls.start({ opacity: 1, x: 0 });
-        }
-    }, [isInView, leftControls, rightControls]);
+        if (leftInView) leftControls.start({ opacity: 1, x: 0 });
+    }, [leftInView, leftControls]);
+
+    useEffect(() => {
+        if (rightInView) rightControls.start({ opacity: 1, x: 0 });
+    }, [rightInView, rightControls]);
 
     return (
-        <section
-            ref={ref}
-            className="relative z-[10] mt-10 flex gap-16 lg:gap-0 lg:items-center flex-col lg:flex-row mb-12 xl:mb-[400px]"
-        >
+        <section className="relative z-[10] mt-10 flex gap-16 lg:gap-0 lg:items-center flex-col lg:flex-row mb-12 xl:mb-[400px]">
             {/* Left content */}
             <motion.div
+                ref={leftRef}
                 initial={{ opacity: 0, x: -100 }}
                 animate={leftControls}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
                 className="space-y-16 w-full lg:w-1/2"
             >
                 <div className="flex flex-col md:items-center md:flex-row md:gap-12 gap-6">
@@ -55,9 +58,10 @@ export default function Intro() {
 
             {/* Right image */}
             <motion.div
+                ref={rightRef}
                 initial={{ opacity: 0, x: 100 }}
                 animate={rightControls}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
                 className="flex lg:justify-end w-full lg:w-1/2 pr-10"
             >
                 <Image
