@@ -1,6 +1,6 @@
-import cabin1 from '@/public/cabin-001.webp';
-import cabin3 from '@/public/cabin-003.webp';
-import cabin5 from '@/public/cabin-005.webp';
+import cabin1 from '@/public/cabin001.jpg';
+import cabin3 from '@/public/cabin003.jpg';
+import cabin5 from '@/public/cabin005.jpg';
 import { BedDouble, Users } from "lucide-react";
 import Image from 'next/image';
 import Link from 'next/link';
