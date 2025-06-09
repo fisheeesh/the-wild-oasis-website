@@ -39,8 +39,8 @@ export default function FAQ() {
     };
 
     return (
-        <div ref={ref} className="max-w-3xl mx-auto py-10">
-            <h2 className="text-3xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
+        <div ref={ref} className="max-w-3xl mx-auto py-16 space-y-8">
+            <h1 className="sm:text-5xl text-4xl uppercase tracking-wide text-center font-bold">FAQ</h1>
             <div className="space-y-4">
                 {faqs.map((faq, index) => (
                     <motion.div

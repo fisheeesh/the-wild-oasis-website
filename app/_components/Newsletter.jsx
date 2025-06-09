@@ -9,7 +9,7 @@ export default function Newsletter() {
     const formInView = useInView(formRef, { once: true, margin: '-100px' })
 
     return (
-        <section className='py-20 flex flex-col space-y-8 justify-center items-center'>
+        <section className='py-24 flex flex-col space-y-8 justify-center items-center'>
             <h1 className='text-4xl sm:text-5xl uppercase tracking-wide font-bold'>
                 Newsletter
             </h1>
