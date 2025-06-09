@@ -4,6 +4,7 @@ import { Josefin_Sans } from 'next/font/google'
 import Header from './_components/Header'
 import { ReservationProvider } from './_components/ReservationContext'
 import { Toaster } from 'react-hot-toast'
+import ScrollTopBtn from './_components/ScrollTopBtn'
 
 const josefin = Josefin_Sans({
   subsets: ['latin'],
@@ -49,6 +50,7 @@ export default function RootLayout({ children }) {
             </ReservationProvider>
           </main>
         </div>
+        <ScrollTopBtn />
       </body>
     </html>
   )

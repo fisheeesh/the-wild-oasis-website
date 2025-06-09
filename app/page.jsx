@@ -20,6 +20,7 @@ export default function Page() {
       <Events />
       <Newsletter />
       <Footer />
+      {/* <ScrollTopBtn /> */}
     </>
   );
 }
