@@ -1,6 +1,7 @@
 "use client"
 
 import Events from "./_components/Events";
+import FAQ from "./_components/FAQ";
 import Footer from "./_components/Footer";
 import Hero from "./_components/Hero";
 import HighlightImages from "./_components/HighlightImages";
@@ -18,6 +19,7 @@ export default function Page() {
       <HotelFacilities />
       <HighlightImages />
       <Events />
+      <FAQ />
       <Newsletter />
       <Footer />
       {/* <ScrollTopBtn /> */}
