@@ -40,6 +40,7 @@ export default function HighlightImages() {
                         <>
                             <div className="relative">
                                 <Image
+                                    placeholder='blur'
                                     src={tennis}
                                     alt="tennis court"
                                     className="object-cover object-center w-full md:w-[400px] h-[270px]"

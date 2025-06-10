@@ -71,6 +71,7 @@ export default function Offers() {
                         >
                             <Link href={cabin.route} className='relative h-[250px] aspect-square'>
                                 <Image
+                                    placeholder='blur'
                                     fill
                                     src={cabin.image}
                                     alt={cabin.name}

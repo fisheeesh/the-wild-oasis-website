@@ -60,6 +60,7 @@ export default function Events() {
                         >
                             <div className='relative h-[250px] aspect-square'>
                                 <Image
+                                    placeholder='blur'
                                     fill
                                     src={event.image}
                                     alt={event.name}

@@ -65,6 +65,7 @@ export default function Intro() {
                 className="flex lg:justify-end w-full lg:w-1/2 pr-10"
             >
                 <Image
+                    placeholder='blur'
                     src={intro2}
                     className="rounded-tl-4xl rounded-br-4xl"
                     alt="hero image"
@@ -75,6 +76,7 @@ export default function Intro() {
             {/* Static image */}
             <div className="absolute xl:block hidden bottom-0 right-0 pr-10 top-[350px]">
                 <Image
+                    placeholder='blur'
                     src={intro1}
                     className="rounded-tl-4xl rounded-br-4xl"
                     alt="hero image"
