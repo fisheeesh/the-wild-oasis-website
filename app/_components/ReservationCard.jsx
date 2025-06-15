@@ -78,7 +78,7 @@ function ReservationCard({ booking, onDelete }) {
         </div>
 
         <div className='flex flex-col md:flex-row md:items-center justify-between'>
-          <p className='text-sm lg:text-base text-primary-300'>
+          <p className='text-[15px] text-primary-300'>
             {format(new Date(startDate), 'EEE, MMM dd yyyy')} (
             {isToday(new Date(startDate))
               ? 'Today'
@@ -88,7 +88,7 @@ function ReservationCard({ booking, onDelete }) {
         </div>
 
         <div className='flex flex-col md:flex-row items-baseline gap-1'>
-          <div className='flex items-center gap-4'>
+          <div className='flex items-center gap-2'>
             <p className='text-xl font-semibold text-accent-400'>${totalPrice}</p>
             <p className='text-primary-300'>&bull;</p>
             <p className='text-lg text-primary-300'>
@@ -121,7 +121,7 @@ function ReservationCard({ booking, onDelete }) {
         </div>
       </div>
 
-      <div className='hidden md:flex flex-col border-l border-primary-800 w-[100px]'>
+      <div className='hidden lg:flex flex-col border-l border-primary-800 w-[100px]'>
         {
           !isPast(startDate) ?
             <>

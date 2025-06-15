@@ -9,7 +9,7 @@ import ReservationReminder from "../_components/ReservationReminder";
 //? ISR
 //? With this it is like PPR
 // $ x
-export const revalidate = 3600
+// export const revalidate = 3600
 
 export const metadata = {
     title: 'Cabins'
