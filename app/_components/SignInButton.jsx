@@ -61,7 +61,7 @@ function SignInButton() {
           </p>
           <button
             onClick={copyCurrentUrl}
-            className="mt-2 px-3 py-1 bg-yellow-600 text-white rounded text-sm hover:bg-yellow-700 transition-colors"
+            className="mt-2 px-3 py-1 bg-yellow-600 text-white text-sm hover:bg-yellow-700 transition-colors"
           >
             Coppy URL
           </button>

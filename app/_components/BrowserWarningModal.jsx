@@ -99,15 +99,9 @@ export default function BrowserWarningModal({ isOpen, onClose }) {
                 <div className="space-y-3">
                     <button
                         onClick={copyCurrentUrl}
-                        className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg font-medium transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                        className="w-full px-4 py-3 bg-blue-600 text-white font-medium transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                     >
                         📋 Copy URL
-                    </button>
-                    <button
-                        onClick={onClose}
-                        className="w-full px-4 py-3 text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors"
-                    >
-                        I'll try another way
                     </button>
                 </div>
             </div>
