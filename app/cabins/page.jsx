@@ -3,6 +3,7 @@ import CabinList from "../_components/CabinList";
 import Spinner from "../_components/Spinner";
 import Filter from "../_components/Filter";
 import ReservationReminder from "../_components/ReservationReminder";
+import Footer from "../_components/Footer";
 
 //? make /cabins dynamic page / SSR
 // export const revalidate = 0
@@ -51,6 +52,9 @@ export default async function Page({ searchParams }) {
                 <CabinList filter={filter} />
                 <ReservationReminder />
             </Suspense>
+            <div className="mt-10">
+                <Footer />
+            </div>
         </div>
     );
 }
