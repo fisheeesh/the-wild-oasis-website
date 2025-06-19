@@ -15,7 +15,7 @@ export default function HamburgerMenu({ user }) {
 
     return (
         <>
-            <div className="lg:hidden flex items-center mt-2 relative z-[999]">
+            <div className="lg:hidden flex items-center mt-2 relative z-20">
                 <button
                     onClick={() => setIsMobMenuOpen(!isMobMenuOpen)}
                     className={`hamburger ${isMobMenuOpen ? 'open' : ''}`}
