@@ -13,7 +13,7 @@ function SignInButton() {
     // Check if we're in an in-app browser
     const checkBrowser = () => {
       const ua = navigator.userAgent || navigator.vendor || window.opera;
-      const isInApp = /LinkedIn|FBAN|FBAV|Instagram|Twitter|Line|WeChat|Snapchat|TikTok/.test(ua) &&
+      const isInApp = /LinkedIn|Twitter|Line|WeChat|Snapchat|TikTok/.test(ua) &&
         /iPhone|iPod|iPad|Android/i.test(ua);
       setIsInAppBrowser(isInApp)
     }
